@@ -11,37 +11,22 @@ body {
   -webkit-text-size-adjust: 100%;
   font-weight: 300;
   -webkit-tap-highlight-color: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  overflow: visible;
-  max-width: 1280px;
-  position: relative;
 }
 
-.container {
-  padding: 0px 170px;
-  width: 100%;
-  display: flex;
-
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
-}
 
 .container-header {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   padding: 0 50px;
   left: 0;
   right: 0;
   height: 115px;
-  overflow: hidden;
   transition: 0.2s linear;
   height: 113px;
   z-index: 1;
+  background-color: #ffffff;
+  margin-bottom: 50px;
 
   @media (max-width: 850px) {
     padding: 0 25px;
@@ -49,9 +34,13 @@ body {
 
   &--open {
     background: #353b4c;
-    box-shadow: 0 9px 33px rgb(0 0 0 / 26%);
-    color: #fff;
-    height: 430px;
+    color: white;
+    
+  }
+
+  &--open .navigation-menu {
+    top:100%;
+    transform: translateY(0%);
 
     @media (max-width: 850px) {
       height: 630px;
@@ -62,6 +51,7 @@ body {
     height: 630px;
   }
 }
+
 
 .header {
   display: flex;
@@ -192,15 +182,19 @@ body {
 }
 
 .navigation-menu {
+  transition: 0.2s linear;
   display: flex;
   padding: 40px 120px;
   justify-content: space-between;
   flex-wrap: wrap;
   position: absolute;
-  top: 113px;
+  transform: translateY(-100%);
   left: 0;
   right: 0;
-
+  background: #353b4c;
+  color: #fff;
+  z-index: -1;
+  
   @media (max-width: 850px) {
     padding: 45px 25px;
   }
@@ -230,15 +224,21 @@ body {
   }
 }
 
+.content-container{
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
 .container-free-demo {
-  background-image: url(../img/home/section1/background.svg);
-  height: 100%;
-  margin-top: 130px;
+  background-image: url('../img/home/section1/background.svg');
   background-repeat: no-repeat;
-  padding: 40px 170px;
+  background-position: left;
+  background-size: contain;
+  margin-bottom: 50px;
 
   @media (max-width: 850px) {
-    padding: 40px 25px;
+  background-image: unset;
   }
 }
 
@@ -373,27 +373,10 @@ input[type="email"] {
 }
 
 .container-app-features {
-  height: 100%;
   background-repeat: no-repeat;
-  padding: 40px 85px;
   background-size: auto;
-  background-position: bottom;
   position: relative;
-  width: 100%;
-
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
-
-  &__background {
-    position: absolute;
-    max-height: 952px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-  }
+  background-color: #F7F7F7;;
 }
 
 .app-features-box {
@@ -402,8 +385,25 @@ input[type="email"] {
 
   @media (max-width: 850px) {
     margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
+
+
+.app-builder-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-app-builder {
+  background: url('../img/home/path.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 120%;
+}
+
 
 .app-builder-info {
   display: flex;
@@ -455,17 +455,22 @@ input[type="email"] {
 .app-restaurant-info {
   display: flex;
   flex-direction: column;
-  margin-right: 58%;
 
   @media (max-width: 850px) {
     margin-right: 0;
+  }
+
+  p{
+    font-weight: 300;
+font-size: 16px;
+line-height: 20px;
   }
 
   h1 {
     max-width: 385px;
   }
 
-  li span {
+  li p {
     display: inline-block;
     width: 80%;
     vertical-align: middle;
@@ -507,14 +512,9 @@ input[type="email"] {
 }
 
 .restaurant-loy-pic {
-  position: absolute;
-  right: 170px;
-  bottom: -80px;
+  height: -webkit-fill-available;
   transition: 0.5s linear;
-
-  @media (max-width: 990px) {
-    right: 50px;
-  }
+  margin-bottom: -80px;
 
   @media (max-width: 850px) {
     display: none;
@@ -522,7 +522,6 @@ input[type="email"] {
 }
 
 .container-custom-table {
-  margin: 0 170px auto;
   margin-top: 170px;
   margin-bottom: 105px;
 
@@ -570,6 +569,10 @@ input[type="email"] {
   display: flex;
   justify-content: center;
   margin-bottom: 250px;
+
+  @media (max-width: 850px) {
+    margin-bottom: 190px;
+  }
 }
 
 .message {
@@ -644,48 +647,19 @@ input[type="email"] {
 }
 
 .container-crm {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px 30px auto;
   position: relative;
   margin-bottom: 120px;
-  overflow: hidden;
-  width: 100%;
+  background: url('../img/home/section1/Path\ 9.svg') left 30%, url('../img/home/section1/Path\ 10.svg') right 30%;
+  background-repeat: no-repeat;
+
+  @media (min-width:1921px) {
+    background: unset;
+  }
 }
 
 .crm-pic {
   width: 100%;
   margin-bottom: 45px;
-}
-
-.crm-bac1 {
-  position: absolute;
-  z-index: -1;
-  left: -30px;
-  top: 270px;
-  transition: 0.3s linear;
-  width: 50%;
-
-  @media (max-width: 850px) {
-    top: 200px;
-    width: unset;
-  }
-}
-
-.crm-bac2 {
-  position: absolute;
-  z-index: -1;
-  right: -30px;
-  top: 270px;
-  transition: 0.3s linear;
-  width: 65%;
-
-  @media (max-width: 850px) {
-    top: 200px;
-    width: unset;
-  }
 }
 
 .pricing {
@@ -840,12 +814,10 @@ input[type="email"] {
 }
 
 .container-about {
-  display: flex;
-  margin: 0 170px auto;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url("../img/home/section1/background.svg");
 
-  @media (max-width: 850px) {
-    margin: 0 20px auto;
-  }
 }
 
 .about-article-box {
@@ -1096,20 +1068,11 @@ input[type="email"] {
   }
 }
 
-.container-navigation {
-  height: 100%;
-  margin-top: 130px;
-  padding: 40px 170px;
-  width: 100%;
-  position: relative;
+.page-navigation {
   font-size: 12px;
   line-height: 14px;
   color: #a6a6a6;
-
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
-
+margin-bottom: 65px;
   a:hover {
     color: #84b400;
     text-decoration: underline;
@@ -1134,17 +1097,13 @@ input[type="email"] {
 }
 
 .container-restourant-info {
-  height: 100%;
-  padding: 40px 170px;
-  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../img/home/section1/background.svg");
   position: relative;
   font-size: 12px;
   line-height: 14px;
   color: #a6a6a6;
-
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
 }
 
 .restourant-info {
@@ -1427,12 +1386,7 @@ input[type="email"] {
 }
 
 .container-article-about {
-  padding: 0px 170px;
-  width: 100%;
 
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
 }
 
 .article-about {
@@ -1624,15 +1578,9 @@ input[type="email"] {
   }
 }
 
-.container-best-rest {
-  padding: 0px 170px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-
-  @media (max-width: 850px) {
-    padding: 40px 25px;
-  }
+.best-rest {
+display: flex;
+flex-wrap: wrap;
 }
 
 .best-rest-digit {
