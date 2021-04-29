@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     header.classList.toggle('container-header--open');
     mainLogo.classList.toggle('dsp-n');
     openLogo.classList.toggle('dsp-b');
-    if(mobileNav.matches){
-      header.classList.toggle('container-header--mobile');
-    }
   })
 
  });
