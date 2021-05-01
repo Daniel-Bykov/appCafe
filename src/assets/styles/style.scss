@@ -596,6 +596,10 @@ line-height: 20px;
   @media (max-width: 850px) {
     margin-bottom: 190px;
   }
+
+  @media (max-width: 500px) {
+    height: 260px;
+  }
 }
 
 .message {
@@ -608,6 +612,10 @@ line-height: 20px;
     @media (max-width: 850px) {
       bottom: -160px;
     }
+
+    @media (max-width: 500px){
+    bottom: -50px;
+}
   }
 
   &-footer {
